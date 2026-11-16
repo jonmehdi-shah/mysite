@@ -1,0 +1,1131 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jon Mehdi Shah | Premium Brand Agency</title>
+    <meta
+      name="description"
+      content="Luxury brand and web design agency for premium businesses, startups, and founders."
+    />
+    <style>
+      :root {
+        --bg: #0d1014;
+        --bg-soft: #121922;
+        --panel: rgba(255, 255, 255, 0.03);
+        --panel-strong: rgba(255, 255, 255, 0.05);
+        --text: #f5efe7;
+        --muted: #b9b2a5;
+        --gold: #d4af6f;
+        --gold-soft: #f2d29a;
+        --gold-deep: #9e742e;
+        --line: rgba(212, 175, 111, 0.22);
+        --shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+        --mx: 50%;
+        --my: 50%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at top left, rgba(212, 175, 111, 0.12), transparent 25%),
+          radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 18%),
+          linear-gradient(180deg, var(--bg), var(--bg-soft));
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at var(--mx) var(--my), rgba(212, 175, 111, 0.12), transparent 16%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      h1, h2, h3, h4 {
+        margin: 0;
+        letter-spacing: -0.06em;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 36px));
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(13, 16, 20, 0.72);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        height: 76px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+      }
+
+      .brand-badge {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+        color: #1a1209;
+        font-size: 1rem;
+        font-weight: 900;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .nav-links a {
+        transition: color 0.25s ease, transform 0.25s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+        transform: translateY(-1px);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .btn {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        cursor: pointer;
+      }
+
+      .btn::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.24), transparent);
+        transform: translateX(-110%);
+        transition: 0.5s ease;
+      }
+
+      .btn:hover::after {
+        transform: translateX(110%);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+        color: #1a140d;
+        box-shadow: 0 18px 35px rgba(212, 175, 111, 0.22);
+      }
+
+      .btn-primary:hover {
+        box-shadow: 0 24px 46px rgba(212, 175, 111, 0.28);
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.02);
+        border-color: var(--line);
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 88px 0 50px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+        color: var(--gold-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 18px rgba(212, 175, 111, 0.9);
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(3rem, 5.5vw, 6rem);
+        line-height: 0.92;
+        letter-spacing: -0.08em;
+        margin: 22px 0 18px;
+      }
+
+      .hero-copy p {
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.8;
+        max-width: 630px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 32px;
+        margin-bottom: 30px;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+      }
+
+      .stat {
+        min-width: 110px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: clamp(1.6rem, 2vw, 2.1rem);
+        letter-spacing: -0.05em;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 620px;
+        display: grid;
+        place-items: center;
+      }
+
+      .image-card {
+        width: min(100%, 520px);
+        overflow: hidden;
+        border-radius: 28px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+
+      .image-card:hover {
+        transform: scale(1.02) rotate(-0.5deg);
+        box-shadow: 0 35px 95px rgba(0,0,0,0.46);
+        border-color: rgba(212, 175, 111, 0.42);
+      }
+
+      .image-card img {
+        height: 560px;
+        object-fit: cover;
+      }
+
+      .floating-box {
+        position: absolute;
+        right: 0;
+        bottom: 36px;
+        width: 220px;
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(15, 18, 22, 0.9);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+
+      .floating-box:hover {
+        transform: translateY(-6px) scale(1.02);
+        border-color: rgba(212, 175, 111, 0.5);
+      }
+
+      .tiny {
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .metric {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .metric strong {
+        font-size: 1.7rem;
+      }
+
+      .chip {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(212,175,111,0.1);
+        border: 1px solid rgba(212,175,111,0.22);
+        color: var(--gold-soft);
+        font-size: 0.72rem;
+      }
+
+      .trust {
+        padding-top: 4px;
+        padding-bottom: 18px;
+      }
+
+      .trust-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 20px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+      }
+
+      .trust-box > span {
+        color: var(--muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.74rem;
+      }
+
+      .logos {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(90px, 1fr));
+        gap: 14px;
+      }
+
+      .logos div {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        text-align: center;
+        padding: 16px 10px;
+        background: rgba(255,255,255,0.02);
+        color: rgba(255,255,255,0.7);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+
+      .logos div:hover {
+        transform: translateY(-4px);
+        border-color: rgba(212,175,111,0.38);
+      }
+
+      section {
+        padding: 90px 0;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 22px;
+        margin-bottom: 38px;
+      }
+
+      .section-intro {
+        max-width: 520px;
+      }
+
+      .section-intro p {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 26px;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(212,175,111,0.4);
+        box-shadow: 0 24px 52px rgba(0,0,0,0.18);
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+        display: grid;
+        place-items: center;
+        border-radius: 16px;
+        margin-bottom: 18px;
+        background: linear-gradient(135deg, rgba(212,175,111,0.14), rgba(255,255,255,0.03));
+        border: 1px solid rgba(212,175,111,0.22);
+        font-size: 1.5rem;
+        transition: transform 0.25s ease;
+      }
+
+      .card:hover .icon {
+        transform: rotate(8deg) scale(1.08);
+      }
+
+      .card h3 {
+        font-size: 1.75rem;
+        margin-bottom: 12px;
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 22px;
+      }
+
+      .portfolio-feature,
+      .mini-portfolio {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        overflow: hidden;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .portfolio-feature:hover,
+      .mini-portfolio:hover {
+        transform: translateY(-8px);
+        border-color: rgba(212,175,111,0.42);
+        box-shadow: 0 28px 55px rgba(0,0,0,0.16);
+      }
+
+      .portfolio-feature img {
+        height: 440px;
+        object-fit: cover;
+      }
+
+      .mini-portfolio img {
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .portfolio-copy {
+        padding: 24px;
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .portfolio-copy h3 {
+        margin: 10px 0 10px;
+        font-size: 1.6rem;
+      }
+
+      .portfolio-copy p {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .result {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 28px 26px;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .result:hover {
+        transform: translateY(-6px);
+        border-color: rgba(212,175,111,0.38);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      }
+
+      .result strong {
+        display: block;
+        font-size: clamp(2.4rem, 3vw, 3.2rem);
+        letter-spacing: -0.06em;
+        margin-bottom: 8px;
+      }
+
+      .result span {
+        color: var(--muted);
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .step {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 22px 18px;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+
+      .step:hover {
+        transform: translateY(-6px);
+        border-color: rgba(212,175,111,0.38);
+      }
+
+      .step-number {
+        color: var(--gold-soft);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        margin-bottom: 10px;
+      }
+
+      .step h4 {
+        margin: 0 0 8px;
+        font-size: 1.25rem;
+      }
+
+      .step p {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .testimonials {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .quote {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 24px;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+
+      .quote:hover {
+        transform: translateY(-6px);
+        border-color: rgba(212,175,111,0.4);
+      }
+
+      .stars {
+        color: #ffd36a;
+        letter-spacing: 0.14em;
+        margin-bottom: 14px;
+      }
+
+      .quote p {
+        color: var(--muted);
+        line-height: 1.8;
+        margin: 0 0 18px;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep));
+      }
+
+      .person strong {
+        display: block;
+      }
+
+      .person span {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .cta-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 42px 32px;
+        border-radius: 30px;
+        border: 1px solid var(--line);
+        background: linear-gradient(135deg, rgba(212,175,111,0.08), rgba(255,255,255,0.02));
+      }
+
+      .cta-box h3 {
+        margin: 10px 0 8px;
+        font-size: clamp(2rem, 2.5vw, 2.7rem);
+      }
+
+      .cta-box p {
+        color: var(--muted);
+      }
+
+      .footer {
+        padding: 24px 0 70px;
+        color: var(--muted);
+      }
+
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        color: var(--text);
+        letter-spacing: 0.08em;
+      }
+
+      .small-note {
+        font-size: 0.92rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid,
+        .portfolio-grid,
+        .services-grid,
+        .results-grid,
+        .process-grid,
+        .testimonials,
+        .cta-box {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid,
+        .portfolio-grid,
+        .services-grid,
+        .results-grid,
+        .process-grid,
+        .testimonials,
+        .cta-box {
+          display: grid;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .section-head {
+          display: block;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav-actions .btn-secondary {
+          display: none;
+        }
+
+        .logos {
+          grid-template-columns: repeat(2, minmax(110px, 1fr));
+        }
+
+        .footer-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-badge">J</span>
+          <span>Jon Mehdi</span>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#process">Process</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-secondary" href="#contact">Book a call</a>
+          <a class="btn btn-primary" href="#contact">Get started</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">Luxury creative agency</div>
+            <h1>We make brands feel unforgettable.</h1>
+            <p>
+              We help founders, startups, and ambitious companies grow through sharp branding,
+              premium web experiences, and conversion-focused storytelling designed to win trust.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Book a free consult</a>
+              <a class="btn btn-secondary" href="#work">View our work</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <strong class="count" data-target="240" data-suffix="+">0</strong>
+                <span>Projects</span>
+              </div>
+              <div class="stat">
+                <strong class="count" data-target="4.9" data-suffix="/5" data-decimals="1">0</strong>
+                <span>Client rating</span>
+              </div>
+              <div class="stat">
+                <strong class="count" data-target="3" data-suffix="x">0</strong>
+                <span>Average lift</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="image-card">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
+                alt="Creative team brainstorming"
+              />
+            </div>
+
+            <div class="floating-box">
+              <div class="tiny">Performance</div>
+              <div class="metric">
+                <strong class="count" data-target="186" data-suffix="%">0</strong>
+                <span class="chip">Growth</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container trust reveal">
+        <div class="trust-box">
+          <span>Trusted by</span>
+          <div class="logos">
+            <div>Shopify</div>
+            <div>Stripe</div>
+            <div>Notion</div>
+            <div>Slack</div>
+            <div>HubSpot</div>
+          </div>
+        </div>
+      </div>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">What we do</div>
+              <h2>Creative systems built to grow your business.</h2>
+            </div>
+            <div class="section-intro">
+              <p>
+                We turn your value into a premium digital presence that feels sharper,
+                more credible, and more persuasive from the very first interaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="services-grid">
+            <article class="card reveal">
+              <div class="icon">✦</div>
+              <h3>Brand Strategy</h3>
+              <p>
+                Positioning, messaging, and visual identity systems that sharpen your story and
+                make your business feel instantly premium.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <div class="icon">▣</div>
+              <h3>Web Design</h3>
+              <p>
+                Refined digital experiences built to convert—beautiful, clear, scalable, and
+                designed for trust from the first scroll.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <div class="icon">⬢</div>
+              <h3>Growth Marketing</h3>
+              <p>
+                Landing pages, funnels, and optimization systems that help move qualified leads
+                from attention to action.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Selected work</div>
+              <h2>Built for clarity, trust, and conversion.</h2>
+            </div>
+            <div class="section-intro">
+              <p>
+                We create experiences that balance premium aesthetics with strategic clarity so
+                your brand communicates value before a single word is spoken.
+              </p>
+            </div>
+          </div>
+
+          <div class="portfolio-grid">
+            <article class="portfolio-feature reveal">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+                alt="Business strategy meeting"
+              />
+              <div class="portfolio-copy">
+                <div class="meta">
+                  <span>Brand Refresh</span>
+                  <span>Fintech</span>
+                </div>
+                <h3>Northstar Capital</h3>
+                <p>
+                  Reframed a crowded financial story into a high-trust experience that improved
+                  buyer quality and elevated brand perception.
+                </p>
+              </div>
+            </article>
+
+            <article class="mini-portfolio reveal">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                alt="Software dashboard"
+              />
+              <div class="portfolio-copy">
+                <div class="meta">
+                  <span>Product Site</span>
+                  <span>SaaS</span>
+                </div>
+                <h3>FlowPilot</h3>
+                <p>
+                  Simplified complex product value into a more persuasive digital narrative and
+                  stronger conversion flow.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Process</div>
+              <h2>A clear path from idea to momentum.</h2>
+            </div>
+          </div>
+
+          <div class="process-grid">
+            <div class="step reveal">
+              <div class="step-number">01</div>
+              <h4>Discover</h4>
+              <p>We identify your audience, opportunity, and what makes your value unmistakable.</p>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-number">02</div>
+              <h4>Design</h4>
+              <p>We shape the visual system and interaction model that makes the brand feel premium.</p>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-number">03</div>
+              <h4>Build</h4>
+              <p>We turn strategy into a polished digital experience with clarity and focus at every step.</p>
+            </div>
+
+            <div class="step reveal">
+              <div class="step-number">04</div>
+              <h4>Grow</h4>
+              <p>We optimize the funnel so the experience continues to improve performance over time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Results</div>
+              <h2>Strategy that performs.</h2>
+            </div>
+            <div class="section-intro">
+              <p>
+                The goal is not just beautiful design. It is better positioning, stronger trust,
+                and measurable business momentum.
+              </p>
+            </div>
+          </div>
+
+          <div class="results-grid">
+            <div class="result reveal">
+              <strong class="count" data-target="186" data-suffix="%">0</strong>
+              <span>Average lift in qualified leads</span>
+            </div>
+            <div class="result reveal">
+              <strong class="count" data-target="2.4" data-suffix="x" data-decimals="1">0</strong>
+              <span>Increase in engagement after redesign</span>
+            </div>
+            <div class="result reveal">
+              <strong class="count" data-target="32" data-suffix=" days">0</strong>
+              <span>Average launch timeline</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Client feedback</div>
+              <h2>People trust us to make them look premium.</h2>
+            </div>
+          </div>
+
+          <div class="testimonials">
+            <article class="quote reveal">
+              <div class="stars">★★★★★</div>
+              <p>
+                “The website finally matched the quality of our service. Prospects immediately took
+                us more seriously.”
+              </p>
+              <div class="person">
+                <div class="avatar"></div>
+                <div>
+                  <strong>Amelia Chen</strong>
+                  <span>Founder, Atlas Growth</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="quote reveal">
+              <div class="stars">★★★★★</div>
+              <p>
+                “They sharpened our story and improved the conversion path. The new experience feels
+                stronger, clearer, and more trustworthy.”
+              </p>
+              <div class="person">
+                <div class="avatar"></div>
+                <div>
+                  <strong>Marcus Bell</strong>
+                  <span>CMO, Northstar Capital</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="quote reveal">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Beautiful design with strategy behind it. The site feels premium, focused, and
+                very compelling for the right clients.”
+              </p>
+              <div class="person">
+                <div class="avatar"></div>
+                <div>
+                  <strong>Sofia Diaz</strong>
+                  <span>CEO, Velora Studio</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="cta-box reveal">
+            <div>
+              <div class="eyebrow">Ready to grow?</div>
+              <h3>Let’s build your next standout brand experience.</h3>
+              <p>Book a strategy call and get a clear plan for your next move.</p>
+            </div>
+
+            <a class="btn btn-primary" href="mailto:hello@jonmehdishah.com">hello@jonmehdishah.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div class="footer-brand">
+          <span class="brand-badge">J</span>
+          <span>Jon Mehdi Shah</span>
+        </div>
+        <div class="small-note">Created by Jon Mehdi Shah</div>
+      </div>
+    </footer>
+
+    <script>
+      const revealItems = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.18 }
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      function animateCounter(element) {
+        const target = Number(element.dataset.target || 0);
+        const decimals = Number(element.dataset.decimals || 0);
+        const suffix = element.dataset.suffix || "";
+        const duration = 1400;
+        const start = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = target * eased;
+
+          element.textContent = `${current.toFixed(decimals)}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            element.textContent = `${target.toFixed(decimals)}${suffix}`;
+          }
+        }
+
+        requestAnimationFrame(tick);
+      }
+
+      document.querySelectorAll(".count").forEach((el) => animateCounter(el));
+
+      document.addEventListener("pointermove", (event) => {
+        document.body.style.setProperty("--mx", `${event.clientX}px`);
+        document.body.style.setProperty("--my", `${event.clientY}px`);
+      });
+    </script>
+  </body>
+</html>
+```
